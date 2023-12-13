@@ -1,69 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BMR Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Fira Sans', sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            height: 100vh;
+            background-color: white;
+            overflow-y: hidden !important;
+            font-family: 'Fira Sans', sans-serif;
             text-align: center;
             margin: 20px;
+            display: flex;
+            justify-content: center;
         }
+
         label {
             display: block;
             margin: 10px 0;
         }
+
+        .bmr {
+            position: absolute;
+            border-radius: 20px;
+            background-color: #3C4048;
+            box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.219);
+            padding: 40px;
+            width: 400px;
+            margin-top: 60px;
+        }
+
+        button {
+            border: 0;
+            outline: none;
+            border-radius: 15px;
+            padding: 15px;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            background: #ffbe00;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            font-weight: 600;
+        }
+
+        button:hover{
+            background: black;
+            color: white;
+        }
+        option {
+            color: black;
+        }
+
+        label,
+        h1,
+        select {
+            color: white;
+            font-style: bold;
+            margin-top: 15px;
+        }
+
+        select {
+            width: 200px;
+            height: 30px;
+            padding-left: 80px;
+            border-radius: 10px;
+        }
+
+        .button-block {
+            display: block;
+            width: 100%;
+        }
+
+        input {
+            width: 200px;
+            height: 30px;
+            border-radius: 10px;
+        }
     </style>
 </head>
+
 <body>
-    <h1>BMR Calculator</h1>
+    <div class="bmr">
+        <h1>BMR Calculator</h1>
+        <label for="gender">Select your gender:</label>
+        <select style="color: black" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
 
-    <label for="gender">Select your gender:</label>
-    <select id="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-    </select>
+        <label for="weight">Enter your weight (kg):</label>
+        <input type="number" id="weight" step="any" />
 
-    <label for="weight">Enter your weight (kg):</label>
-    <input type="number" id="weight" step="any">
+        <label for="height">Enter your height (cm):</label>
+        <input type="number" id="height" step="any" />
 
-    <label for="height">Enter your height (cm):</label>
-    <input type="number" id="height" step="any">
+        <label for="age">Enter your age:</label>
+        <input type="number" id="age" />
 
-    <label for="age">Enter your age:</label>
-    <input type="number" id="age">
+        <br /><br />
 
-    <br><br>
+        <button onclick="calculateBMR()">
+            Calculate
+        </button>
 
-    <button onclick="calculateBMR()">Calculate BMR</button>
+        <br /><br />
 
-    <br><br>
-
-    <p id="result"></p>
-
+        <p id="result"></p>
+    </div>
     <script>
         function calculateBMR() {
-            var gender = document.getElementById('gender').value;
-            var weight = parseFloat(document.getElementById('weight').value);
-            var height = parseFloat(document.getElementById('height').value);
-            var age = parseInt(document.getElementById('age').value);
+            var gender = document.getElementById("gender").value;
+            var weight = parseFloat(document.getElementById("weight").value);
+            var height = parseFloat(document.getElementById("height").value);
+            var age = parseInt(document.getElementById("age").value);
 
-            if (isNaN(weight) || isNaN(height) || isNaN(age) || weight <= 0 || height <= 0 || age <= 0) {
-                document.getElementById('result').innerHTML = "Please enter valid values for weight, height, and age.";
+            if (
+                isNaN(weight) ||
+                isNaN(height) ||
+                isNaN(age) ||
+                weight <= 0 ||
+                height <= 0 ||
+                age <= 0
+            ) {
+                document.getElementById("result").innerHTML =
+                    "Please enter valid values for weight, height, and age.";
+                document.getElementById("result").style.color = "white";
                 return;
             }
 
             var bmr = 0;
 
-            if (gender === 'male') {
-                bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+            if (gender === "male") {
+                bmr = 88.362 + 13.397 * weight + 4.799 * height - 5.677 * age;
             } else {
-                bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+                bmr = 447.593 + 9.247 * weight + 3.098 * height - 4.33 * age;
             }
 
-            document.getElementById('result').innerHTML =` Your Basal Metabolic Rate (BMR) is: ${bmr.toFixed(2)} calories per day.`;
+            document.getElementById(
+                "result"
+            ).innerHTML = ` Your Basal Metabolic Rate (BMR) is: ${bmr.toFixed(
+                2
+            )} calories per day.`;
+            document.getElementById("result").style.color = "white";
         }
     </script>
 </body>
+
 </html>
