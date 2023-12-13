@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-image: url('images/sbmr.png'); /* Add the correct path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-y: hidden !important;
+    font-family: 'Fira Sans', sans-serif;
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+.home {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffbe00; /* Yellow color */
+    color: black;
+    
+}
+
+.home:hover {
+    background-color: black;
+    color: white;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+.bmr {
+    position: absolute;
+    border-radius: 20px;
+    background-color: rgba(60, 64, 72, 0.8); /* Use rgba for a semi-transparent background */
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.219);
+    padding: 40px;
+    width: 400px;
+    margin-top: 60px;
+    margin-top: 6rem;
+}
+
+button {
+    border: 0;
+    outline: none;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    background: #ffbe00;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-weight: 600;
+}
+
+button:hover {
+    background: black;
+    color: white;
+}
+
+option {
+    color: black;
+}
+
+label,
+h1,
+select {
+    color: white;
+    font-style: bold;
+    margin-top: 15px;
+}
+
+select {
+    width: 200px;
+    height: 30px;
+    padding-left: 80px;
+    border-radius: 10px;
+}
+
+.button-block {
+    display: block;
+    width: 100%;
+}
+
+input {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+}
