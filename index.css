@@ -143,6 +143,10 @@ a.active,nav a:hover{
     }
 }
 
+.submit_1 li a{
+    color: #000000;
+}
+
 /* footer */
 footer {
         height: 220px;
