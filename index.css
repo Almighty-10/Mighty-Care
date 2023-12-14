@@ -8,17 +8,13 @@
 
 
 nav{
-    background: #FFBE00;
+    background: #FFBE00;    
     height: 5rem;
     width: 100%;
     /* position: fixed; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.682)
 }
-@media (max-width:838px) {
-    nav{
-        /* position: fixed; */
-    }
-}
+
 .dflex{
     display: inline-block;
     padding: auto;
