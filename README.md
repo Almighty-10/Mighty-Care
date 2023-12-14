@@ -6,7 +6,7 @@ Welcome to Mighty-Fitness, your ultimate destination for achieving your health a
 
 ### 1. Chatbot - Your 24/7 Fitness Guide
 
-![Chatbot](chatbot.png)
+![](chatbot.png)
 
 Our AI-enabled fitness guide is available around the clock to assist and guide you. Whether you have questions about workouts, nutrition, or need motivation, the chatbot is here to help.
 
