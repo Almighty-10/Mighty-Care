@@ -25,6 +25,9 @@ body {
 	justify-content: center;
 }
 
+li a:hover{
+	color: white;
+}
 .groups li {
 	text-align: center;
 	width: 200px;
